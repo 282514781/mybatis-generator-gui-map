@@ -40,10 +40,10 @@ mybatis-generator-gui-map是基于[mybatis generator](http://www.mybatis.org/gen
 
 ```bash
     git clone https://github.com/282514781/mybatis-generator-gui-map.git
-    cd mybatis-generator-gui
+    cd mybatis-generator-gui-map
     mvn jfx:jar
     cd target/jfx/app/
-    java -jar mybatis-generator-gui.jar
+    java -jar mybatis-generator-gui-map.jar
 ```
 
 * 方法三: IDE中运行
