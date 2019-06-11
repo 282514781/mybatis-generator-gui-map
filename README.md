@@ -1,7 +1,7 @@
-mybatis-generator-gui
+mybatis-generator-gui-map 在mybatis-generator-gui基础上修改
 ==============
 
-mybatis-generator-gui是基于[mybatis generator](http://www.mybatis.org/generator/index.html)开发一款界面工具, 本工具可以使你非常容易及快速生成Mybatis的Java POJO文件及数据库Mapping文件。
+mybatis-generator-gui-map是基于[mybatis generator](http://www.mybatis.org/generator/index.html)开发一款界面工具, 本工具可以使你非常容易及快速生成Mybatis的Java POJO文件及数据库Mapping文件。
 
 ![image](https://user-images.githubusercontent.com/3505708/49334784-1a42c980-f619-11e8-914d-9ea85db9cec3.png)
 
@@ -22,6 +22,8 @@ mybatis-generator-gui是基于[mybatis generator](http://www.mybatis.org/generat
 
 ### 要求
 本工具由于使用了Java 8的众多特性，所以要求JDK <strong>1.8.0.60</strong>以上版本，另外<strong>JDK 1.9</strong>暂时还不支持。
+### 新增
+比原版的新增了3个传入map参数的带分页的方法目前只支持mysql（分页参数为offset（第offset+1条开始），limit（取多少条）），后续会支持更多数据库
 
 ### 下载
 你可以从本链接下载本工具: http://tools.mingzhi.ink
@@ -37,7 +39,7 @@ mybatis-generator-gui是基于[mybatis generator](http://www.mybatis.org/generat
 * 方法二: 自助构建
 
 ```bash
-    git clone https://github.com/zouzg/mybatis-generator-gui
+    git clone https://github.com/282514781/mybatis-generator-gui-map.git
     cd mybatis-generator-gui
     mvn jfx:jar
     cd target/jfx/app/
@@ -79,8 +81,7 @@ Eclipse or IntelliJ IDEA中启动, 找到```com.zzg.mybatis.generator.MainUI```�
     * 如果有任何的错误截图会更好
     * 如果你是一些常见的数据库连接、软件启动不了等问题，请先仔细阅读上面的文档，再解决不了在下面的QQ群中问（问问题的时候尽量把各种信息都提供好，否则只是几行文字是没有人愿意为你解答的）。
     
-### QQ群
-鉴于有的同学可能有一些特殊情况不能使用，我建了一个QQ群供大家交流，QQ群号：613911142（已满），608454894
+
 
 - - -
 Licensed under the Apache 2.0 License
