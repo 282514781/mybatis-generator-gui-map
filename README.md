@@ -86,5 +86,5 @@ Eclipse or IntelliJ IDEA中启动, 找到```com.zzg.mybatis.generator.MainUI```�
 - - -
 Licensed under the Apache 2.0 License
 
-Copyright 2017 by Owen Zou
+Copyright 2019 by hacker li
 # mybatis-generator-gui-map
