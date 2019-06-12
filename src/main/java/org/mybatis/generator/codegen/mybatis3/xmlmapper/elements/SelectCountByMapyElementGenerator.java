@@ -41,7 +41,9 @@ public class SelectCountByMapyElementGenerator extends AbstractXmlElementGenerat
                 answer.addElement(new TextElement(sb.toString()));
             }
             sb.append(introspectedColumn.getJavaProperty());
-            sb.append(" != null and != ''");
+            sb.append(" != null and ");
+            sb.append(introspectedColumn.getJavaProperty());
+            sb.append(" != ''");
             XmlElement isNotNullElement = new XmlElement("if");
             isNotNullElement.addAttribute(new Attribute("test", sb.toString()));
             answer.addElement(isNotNullElement);

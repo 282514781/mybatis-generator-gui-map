@@ -63,7 +63,9 @@ public class SelectByMapElementGenerator extends AbstractXmlElementGenerator {
             }
             sb.setLength(0);
             sb.append(introspectedColumn.getJavaProperty());
-            sb.append(" != null and != ''");
+            sb.append(" != null and ");
+            sb.append(introspectedColumn.getJavaProperty());
+            sb.append(" != ''");
             XmlElement isNotNullElement = new XmlElement("if");
             isNotNullElement.addAttribute(new Attribute("test", sb.toString()));
             answer.addElement(isNotNullElement);

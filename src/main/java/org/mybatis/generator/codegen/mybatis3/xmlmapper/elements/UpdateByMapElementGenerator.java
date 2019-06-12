@@ -37,7 +37,9 @@ public class UpdateByMapElementGenerator extends AbstractXmlElementGenerator {
             IntrospectedColumn introspectedColumn = (IntrospectedColumn)var6.next();
             sb.setLength(0);
             sb.append(introspectedColumn.getJavaProperty());
-            sb.append(" != null and != ''");
+            sb.append(" != null and ");
+            sb.append(introspectedColumn.getJavaProperty());
+            sb.append(" != ''");
             XmlElement isNotNullElement = new XmlElement("if");
             isNotNullElement.addAttribute(new Attribute("test", sb.toString()));
             dynamicElement.addElement(isNotNullElement);
