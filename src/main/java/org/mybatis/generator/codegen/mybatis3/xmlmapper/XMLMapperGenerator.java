@@ -47,6 +47,7 @@ public class XMLMapperGenerator extends AbstractXmlGenerator {
         this.addSelectCountByMapElement(answer);
         this.addSelectByMapElement(answer);
         this.addUpdateByMapElement(answer);
+        this.addInsertSelectiveByMapElement(answer);
         return answer;
     }
 
@@ -60,6 +61,13 @@ public class XMLMapperGenerator extends AbstractXmlGenerator {
     protected void addSelectCountByMapElement(XmlElement parentElement) {
         if (this.introspectedTable.getRules().generateBaseResultMap()) {
             AbstractXmlElementGenerator elementGenerator = new SelectCountByMapyElementGenerator();
+            this.initializeAndExecuteGenerator(elementGenerator, parentElement);
+        }
+
+    }
+    protected void addInsertSelectiveByMapElement(XmlElement parentElement) {
+        if (this.introspectedTable.getRules().generateBaseResultMap()) {
+            AbstractXmlElementGenerator elementGenerator = new InsertSelectiveByMapElementGenerator();
             this.initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
 

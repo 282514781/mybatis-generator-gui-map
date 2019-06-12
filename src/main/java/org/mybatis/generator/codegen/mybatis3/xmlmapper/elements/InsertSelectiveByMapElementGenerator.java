@@ -21,7 +21,7 @@ public class InsertSelectiveByMapElementGenerator extends AbstractXmlElementGene
 
     public void addElements(XmlElement parentElement) {
         XmlElement answer = new XmlElement("insert");
-        answer.addAttribute(new Attribute("id", this.introspectedTable.getInsertSelectiveStatementId()));
+        answer.addAttribute(new Attribute("id", "insertSelectiveByMap"));
         FullyQualifiedJavaType parameterType = this.introspectedTable.getRules().calculateAllFieldsClass();
         answer.addAttribute(new Attribute("parameterType", parameterType.getFullyQualifiedName()));
         this.context.getCommentGenerator().addComment(answer);
