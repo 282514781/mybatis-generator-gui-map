@@ -7,4 +7,4 @@ logs
 .project
 .classpath
 /src/main/resources/sqlite3.db
-/config/
+
