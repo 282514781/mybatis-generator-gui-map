@@ -31,7 +31,7 @@ public class UpdateByMapElementGenerator extends AbstractXmlElementGenerator {
         answer.addElement(new TextElement(sb.toString()));
         XmlElement dynamicElement = new XmlElement("set");
         answer.addElement(dynamicElement);
-        Iterator var6 = ListUtilities.removeGeneratedAlwaysColumns(this.introspectedTable.getAllColumns()).iterator();
+        Iterator var6 = ListUtilities.removeGeneratedAlwaysColumns(this.introspectedTable.getNonPrimaryKeyColumns()).iterator();
 
         while(var6.hasNext()) {
             IntrospectedColumn introspectedColumn = (IntrospectedColumn)var6.next();
@@ -51,6 +51,24 @@ public class UpdateByMapElementGenerator extends AbstractXmlElementGenerator {
             isNotNullElement.addElement(new TextElement(sb.toString()));
         }
 
+        boolean and = false;
+        Iterator var10 = this.introspectedTable.getPrimaryKeyColumns().iterator();
+
+        while(var10.hasNext()) {
+            IntrospectedColumn introspectedColumn = (IntrospectedColumn)var10.next();
+            sb.setLength(0);
+            if (and) {
+                sb.append("  and ");
+            } else {
+                sb.append("where ");
+                and = true;
+            }
+
+            sb.append(MyBatis3FormattingUtilities.getEscapedColumnName(introspectedColumn));
+            sb.append(" = ");
+            sb.append(MyBatis3FormattingUtilities.getParameterClause(introspectedColumn));
+            answer.addElement(new TextElement(sb.toString()));
+        }
 
         if (this.context.getPlugins().sqlMapUpdateByPrimaryKeySelectiveElementGenerated(answer, this.introspectedTable)) {
             parentElement.addElement(answer);
