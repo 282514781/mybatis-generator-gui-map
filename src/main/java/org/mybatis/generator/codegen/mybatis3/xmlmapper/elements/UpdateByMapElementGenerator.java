@@ -20,7 +20,7 @@ public class UpdateByMapElementGenerator extends AbstractXmlElementGenerator {
 
     public void addElements(XmlElement parentElement) {
         XmlElement answer = new XmlElement("update");
-        answer.addAttribute(new Attribute("id", "updateByMap"));
+        answer.addAttribute(new Attribute("id", "updateByMapSelective"));
         String parameterType = "java.util.Map";
 
         answer.addAttribute(new Attribute("parameterType", parameterType));

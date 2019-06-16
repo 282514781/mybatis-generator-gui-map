@@ -76,7 +76,7 @@ public class SelectByMapElementGenerator extends AbstractXmlElementGenerator {
             isNotNullElement.addElement(new TextElement(sb.toString()));
         }
         sb.setLength(0);
-        sb.append(" limit != null and offset != null'");
+        sb.append("limit != null and offset != null");
         XmlElement isNotNullElement = new XmlElement("if");
         isNotNullElement.addAttribute(new Attribute("test", sb.toString()));
         answer.addElement(isNotNullElement);

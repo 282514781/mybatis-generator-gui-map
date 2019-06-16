@@ -21,7 +21,7 @@ public class SelectCountByMapyElementGenerator extends AbstractXmlElementGenerat
         XmlElement answer = new XmlElement("select");
         answer.addAttribute(new Attribute("id", "selectCountByMap"));
         answer.addAttribute(new Attribute("parameterType", "java.util.Map"));
-        answer.addAttribute(new Attribute("resultType", "java.lang.Long"));
+        answer.addAttribute(new Attribute("resultType", "java.lang.Integer"));
         this.context.getCommentGenerator().addComment(answer);
         StringBuilder sb = new StringBuilder();
         sb.append("select count(*) from ");
@@ -40,6 +40,7 @@ public class SelectCountByMapyElementGenerator extends AbstractXmlElementGenerat
                 and = true;
                 answer.addElement(new TextElement(sb.toString()));
             }
+            sb.setLength(0);
             sb.append(introspectedColumn.getJavaProperty());
             sb.append(" != null and ");
             sb.append(introspectedColumn.getJavaProperty());
