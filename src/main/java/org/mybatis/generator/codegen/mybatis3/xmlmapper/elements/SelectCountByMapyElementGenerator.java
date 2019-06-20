@@ -24,9 +24,8 @@ public class SelectCountByMapyElementGenerator extends AbstractXmlElementGenerat
         answer.addAttribute(new Attribute("resultType", "java.lang.Integer"));
         this.context.getCommentGenerator().addComment(answer);
         StringBuilder sb = new StringBuilder();
-        sb.append("select count(*) from ");
+        sb.append("select count(0)  ");
         sb.append(this.introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime());
-        sb.setLength(0);
         sb.append("from ");
         sb.append(this.introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime());
         answer.addElement(new TextElement(sb.toString()));

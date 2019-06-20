@@ -228,7 +228,7 @@
                                      <HBox prefHeight="100.0" prefWidth="200.0" spacing="18.0">
                                          <children>
                                              <CheckBox fx:id="forUpdateCheckBox" mnemonicParsing="false" selected="false" text="select 增加ForUpdate" />
-                                             <CheckBox fx:id="annotationDAOCheckBox" mnemonicParsing="false" selected="true" text="DAO使用 @Repository 注解" />
+                                             <CheckBox fx:id="annotationDAOCheckBox" mnemonicParsing="false" selected="true" text="DAO使用 @Mapper 注解" />
                                          </children>
                                      </HBox>
                                      <HBox prefHeight="100.0" prefWidth="200.0">
