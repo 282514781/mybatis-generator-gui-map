@@ -49,6 +49,7 @@ public class XMLMapperGenerator extends AbstractXmlGenerator {
         this.addUpdateByMapElement(answer);
         this.addSelectOneByMapElement(answer);
         this.addInsertSelectiveByMapElement(answer);
+        this.addDeleteByMapElement(answer);
         return answer;
     }
 
@@ -142,7 +143,13 @@ public class XMLMapperGenerator extends AbstractXmlGenerator {
         }
 
     }
+    protected void addDeleteByMapElement(XmlElement parentElement) {
+        if (this.introspectedTable.getRules().generateBaseResultMap()) {
+            AbstractXmlElementGenerator elementGenerator = new DeleteByMapElementGenerator(false);
+            this.initializeAndExecuteGenerator(elementGenerator, parentElement);
+        }
 
+    }
     protected void addSelectByExampleWithBLOBsElement(XmlElement parentElement) {
         if (this.introspectedTable.getRules().generateSelectByExampleWithBLOBs()) {
             AbstractXmlElementGenerator elementGenerator = new SelectByExampleWithBLOBsElementGenerator();
