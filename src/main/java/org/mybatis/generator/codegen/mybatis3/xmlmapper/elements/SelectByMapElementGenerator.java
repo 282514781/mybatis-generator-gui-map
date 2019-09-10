@@ -77,7 +77,7 @@ public class SelectByMapElementGenerator extends AbstractXmlElementGenerator {
         }
         sb.setLength(0);
         sb.append(" ORDER BY ");
-        sb.append(this.introspectedTable.getSelectByPrimaryKeyQueryId());
+        sb.append(MyBatis3FormattingUtilities.getEscapedColumnName(this.introspectedTable.getPrimaryKeyColumns().get(0)));
         sb.append(" desc");
         answer.addElement(new TextElement(sb.toString()));
         sb.setLength(0);
