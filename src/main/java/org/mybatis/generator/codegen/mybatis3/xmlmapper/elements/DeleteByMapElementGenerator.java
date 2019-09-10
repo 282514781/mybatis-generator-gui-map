@@ -21,6 +21,7 @@ public class DeleteByMapElementGenerator extends AbstractXmlElementGenerator {
         this.isSimple = isSimple;
     }
 
+    @Override
     public void addElements(XmlElement parentElement) {
         XmlElement answer = new XmlElement("delete");
         answer.addAttribute(new Attribute("id", "deleteByMap"));

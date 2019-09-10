@@ -73,7 +73,7 @@ public class InsertSelectiveByMapElementGenerator extends AbstractXmlElementGene
                     insertTrimElement.addElement(insertNotNullElement);
                     sb.setLength(0);
                     sb.append(introspectedColumn.getJavaProperty());
-                    sb.append(" != null");
+                    sb.append(" != null and ");
                     sb.append(introspectedColumn.getJavaProperty());
                     sb.append(" != ''");
                     XmlElement valuesNotNullElement = new XmlElement("if");
