@@ -81,7 +81,7 @@ Eclipse or IntelliJ IDEA中启动, 找到```com.zzg.mybatis.generator.MainUI```�
     * 如果有任何的错误截图会更好
     * 如果你是一些常见的数据库连接、软件启动不了等问题，请先仔细阅读上面的文档，再解决不了在下面的QQ群中问（问问题的时候尽量把各种信息都提供好，否则只是几行文字是没有人愿意为你解答的）。
     
-
+将sqlite3.db 拷贝 config 目录下
 
 - - -
 Licensed under the Apache 2.0 License
